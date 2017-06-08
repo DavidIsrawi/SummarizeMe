@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Summarize Me</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app/css/styles.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="app/css/normalize.css">
+    <link rel="stylesheet" href="app/css/skeleton.css">
+    <link rel="stylesheet" href="app/font-awesome/css/font-awesome.min.css">
+
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+    <script>
+    System.import('main.js').catch(function(err){ console.error(err); });
+    </script>
+</head>
+
+<body>
+    <my-app>Loading AppComponent content here ...</my-app>
+
+</body>
+<footer>
+    <div class="container">
+        <p class="copyright">
+            &copy; 2017 | David Israwi Yordi. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+</html>
