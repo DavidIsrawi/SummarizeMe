@@ -10,7 +10,7 @@ Program summarizes articles into a few sentences. Inspired by the auto TL;DR bot
 ## Tools
 To develop this program, I used the NLTK (Neuro-linguitic Tool Kit) library in Python
 
-## Frameworks
+## Frameworks and Libraries
 
 [Flask](http://flask.pocoo.org/) - Python micro-framework for web development
 
@@ -19,6 +19,11 @@ To develop this program, I used the NLTK (Neuro-linguitic Tool Kit) library in P
 [Skeleton](http://getskeleton.com/) - CSS Boilerplate
 
 [Font Awesome](http://fontawesome.io/) - CSS Toolkit + Icons
+
+[virtualenv](https://virtualenv.pypa.io/en/stable/) - Create isolated Python environments
+
+[nltk](http://www.nltk.org/) - Natural Language Toolkit
+
 
 ## To test
 
@@ -34,6 +39,24 @@ npm start
 ```
 it should redirect you to http://localhost:3001/
 
+______
+
+**In progress:**
+
+To use the RESTful api for accurate results, set up virtualenv and Flask using pip or your preferred library manager...
+```
+cd server
+sudo pip install virtualenv
+virtualenv venv
+. venv/bin/activate         * for OS X or Linux *
+venv\Scripts\activate       * for Windows *
+sudo pip install Flask
+python restful.py
+```
+To deactivate the virtualenv, just type...
+```
+deactivate
+```
 
 ## For reference:
 

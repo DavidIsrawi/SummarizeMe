@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
   <hr>
   `,
 })
-export class AppComponent  { name = 'David'; }
+export class AppComponent  {
+
+}
