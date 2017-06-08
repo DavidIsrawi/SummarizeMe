@@ -2,13 +2,11 @@
 Program summarizes articles into a few sentences. Inspired by the auto TL;DR bot used for many subreddits
 
 ## How does it work
+**Using NLTK**
 - Remove words with no value from the article (e.g. 'a', 'to', 'am')
 - Create frequency table of words
 - Assign value to each sentence depending on the words it contains and the frequency table
 - Build summary depending on the value of all sentences and the outstanding ones
-
-## Tools
-To develop this program, I used the NLTK (Neuro-linguitic Tool Kit) library in Python
 
 ## Frameworks and Libraries
 
@@ -23,7 +21,6 @@ To develop this program, I used the NLTK (Neuro-linguitic Tool Kit) library in P
 [virtualenv](https://virtualenv.pypa.io/en/stable/) - Create isolated Python environments
 
 [nltk](http://www.nltk.org/) - Natural Language Toolkit
-
 
 ## To test
 
@@ -63,3 +60,5 @@ deactivate
 Check Traversy Media's video: [Angular 2 in 60 Minutes](https://www.youtube.com/watch?v=-zW1zHqsdyc)
 
 Angular's [QuickStart](https://github.com/angular/quickstart)
+
+TL;DR bot made by [SMMRY](http://smmry.com/)

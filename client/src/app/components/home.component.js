@@ -12,16 +12,56 @@ var core_1 = require("@angular/core");
 var summary_service_1 = require("../services/summary.service");
 var HomeComponent = (function () {
     function HomeComponent(summaryService) {
-        var _this = this;
         this.summaryService = summaryService;
         this.submitted = false;
-        this.summaryService.getSummary().subscribe(function (summary) {
-            console.log(summary);
-            _this.summary = summary;
-        });
+        this.textToSum = "";
+        this.summary = {
+            text: "",
+            reduced_by: "40%",
+            avg_contrast: "below",
+            avg_current: "45%",
+            rel_words: [
+                {
+                    word: "Hello",
+                    relevancy: "1.7%"
+                },
+                {
+                    word: "Sir",
+                    relevancy: "1.2%"
+                },
+                {
+                    word: "Lady",
+                    relevancy: "1.0%"
+                }
+            ]
+        };
+        // this.summaryService.getSummary().subscribe(summary => {
+        //     console.log(summary);
+        //     this.summary = summary;
+        // })
     }
-    HomeComponent.prototype.submit = function () {
-        this.submitted = !this.submitted;
+    HomeComponent.prototype.submit = function (text) {
+        var _this = this;
+        this.textToSum = text;
+        // Make object to send to rest api
+        this.summaryService.textToSum = {
+            text: this.textToSum
+        };
+        this.summaryService.getSummary().subscribe(function (summary) {
+            //console.log(summary["result"]);
+            _this.summary = {
+                text: summary["result"]["text"],
+                reduced_by: summary["result"]["stats"]["reduced_by"],
+                avg_contrast: summary["result"]["stats"]["avg_contrast"],
+                avg_current: summary["result"]["stats"]["avg_current"],
+                rel_words: summary["result"]["stats"]["relevant_words"]
+            };
+            console.log("Got it!");
+            console.log(_this.summary);
+            if (!_this.submitted) {
+                _this.submitted = true;
+            }
+        });
     };
     return HomeComponent;
 }());

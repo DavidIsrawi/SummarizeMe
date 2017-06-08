@@ -4,8 +4,8 @@
             <div class="logo">
                 <a class="name" href="#">Summarize me</a>
                 <p class="subtitle">instant summarizer | text statistics</p>
-                <textarea class="u-full-width description" placeholder="Enter text you want to summarize here" id="fullText"></textarea>
-                <input class="button-primary" type="submit" value="Submit" (click)="submit()">
+                <textarea class="u-full-width description" [(ngModel)]="text" placeholder="Enter text you want to summarize here" id="fullText" required></textarea>
+                <input class="button-primary" type="submit" value="Submit" (click)="submit(text)">
             </div>
         </div>
     </div>
@@ -15,15 +15,15 @@
 <div class="container" *ngIf="submitted">
     <div class="twelve columns">
         <h1>Summary:</h1>
-        <p class="description">{{summary.summary.text}}</p>
+        <p class="description">{{summary.text}}</p>
     </div>
     <hr>
     <div class="twelve columns">
         <h1>Statistics:</h1>
-        <p class="description">Your text was reduced by <strong>{{summary.stats.reduced_by}}</strong>, this is <strong>{{summary.stats.avg_contrast}}</strong> our current average of <strong>{{summary.stats.avg_current}}</strong>.</p>
+        <p class="description">Your text was reduced by <strong>{{summary.reduced_by}}</strong>, this is <strong>{{summary.avg_contrast}}</strong> our current average of <strong>{{summary.avg_current}}</strong>.</p>
         <p class="description">The most relevant words were:</p>
         <ul>
-            <li class="description" *ngFor="let word of summary.stats.relevant_words">{{word.word}} - {{word.relevancy}}</li>
+            <li class="description" *ngFor="let word of summary.rel_words">{{word.word}} - {{word.relevancy}}</li>
         </ul>
     </div>
 </div>
