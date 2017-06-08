@@ -1,14 +1,14 @@
 # Summarize Me
 Program summarizes articles into a few sentences. Inspired by the auto TL;DR bot used for many subreddits
 
-# Tools
-To develop this program, I used the NLTK (Neuro-linguitic Tool Kit) library in Python
-
-# How does it work
+## How does it work
 - Remove words with no value from the article (e.g. 'a', 'to', 'am')
 - Create frequency table of words
 - Assign value to each sentence depending on the words it contains and the frequency table
 - Build summary depending on the value of all sentences and the outstanding ones
+
+## Tools
+To develop this program, I used the NLTK (Neuro-linguitic Tool Kit) library in Python
 
 ## Frameworks
 
@@ -22,12 +22,17 @@ To develop this program, I used the NLTK (Neuro-linguitic Tool Kit) library in P
 
 ## To test
 
-Using npm:
+Using npm and json-server:
 ```
+npm install -g json-server
 cd client/
+json-server --watch db.json
+```
+the json server should initialize to http://localhost:3000/, then
+```
 npm start
 ```
-it should redirect you to http://localhost:3000/ if it's not currently in use
+it should redirect you to http://localhost:3001/
 
 
 ## For reference:

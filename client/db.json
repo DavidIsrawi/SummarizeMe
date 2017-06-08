@@ -1,0 +1,32 @@
+{
+    "stats": {
+        "relevant_words": [
+            {
+                "word": "Barrack",
+                "relevancy": "13%"
+            },
+            {
+                "word": "Trump",
+                "relevancy": "10%"
+            },
+            {
+                "word": "Fake",
+                "relevancy": "5%"
+            },
+            {
+                "word": "News",
+                "relevancy": "3%"
+            },
+            {
+                "word": "Story",
+                "relevancy": "2%"
+            }
+        ],
+        "reduced_by": "57%",
+        "avg_contrast": "above",
+        "avg_current": "55%"
+    },
+    "summary": {
+        "text" : "This tab covers about the first minute of the song, before it gets to the really notey stuff. It's mostly the right hand, since the right hand has the melody. However, there are some points in the song where I've added the bass notes that the left hand is playing in brackets [](where I think they sound good, and aren't too difficult to play, but you can ignore them if you want, it'll still sound fine). The song is in 3/4, and I've marked the rhythms. However these are just a very loose framework, since in the recording, Ryan Gosling plays around with the tempo a lot to make the song sound more musical."
+    }
+}

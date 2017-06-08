@@ -9,9 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var summary_service_1 = require("../services/summary.service");
 var HomeComponent = (function () {
-    function HomeComponent() {
+    function HomeComponent(summaryService) {
+        var _this = this;
+        this.summaryService = summaryService;
         this.submitted = false;
+        this.summaryService.getSummary().subscribe(function (summary) {
+            console.log(summary);
+            _this.summary = summary;
+        });
     }
     HomeComponent.prototype.submit = function () {
         this.submitted = !this.submitted;
@@ -22,9 +29,10 @@ HomeComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'home',
-        templateUrl: 'home.component.html'
+        templateUrl: 'home.component.html',
+        providers: [summary_service_1.SummaryService]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [summary_service_1.SummaryService])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
 //# sourceMappingURL=home.component.js.map
