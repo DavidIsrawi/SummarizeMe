@@ -14,8 +14,8 @@ def sendStats():
 @app.route('/summary', methods=['POST'])
 def summary():
     result = summarize(request.json['text'])
-    result["stats"]["avg_contrast"] = "above"       # Temporary
-    result["stats"]["avg_current"] = "40%"          # Temporary
+    #result["stats"]["avg_contrast"] = "above"       # Temporary
+    #result["stats"]["avg_current"] = "40%"          # Temporary
     return jsonify({'result' : result})
 
 if (__name__ == '__main__'):
