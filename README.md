@@ -38,9 +38,7 @@ it should redirect you to http://localhost:3001/
 
 ______
 
-**In progress:**
-
-To use the RESTful api for accurate results, set up virtualenv and Flask using pip or your preferred library manager...
+To use the RESTful api and get accurate results, set up virtualenv and Flask using pip or your preferred library manager...
 ```
 cd server
 sudo pip install virtualenv
