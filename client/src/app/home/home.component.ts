@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SummaryService } from '../services/summary.service';
+import { SummaryService } from '../summary.service';
 
 @Component({
     moduleId: module.id,

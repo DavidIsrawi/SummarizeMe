@@ -9,6 +9,6 @@ import { Component } from '@angular/core';
   <hr>
   `,
 })
-export class AppComponent  {
+export class AppComponent {
 
 }

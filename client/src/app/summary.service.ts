@@ -15,7 +15,8 @@ export class SummaryService {
     getSummary() {
         // For rest api : http://127.0.0.1:8080/summary
         // For db.json : http://localhost:3000/db
-        return this.http.post('http://127.0.0.1:8080/summary', this.textToSum)
+        // For AWS Beanstalk: http://summarizeme.nrfkys4df7.us-east-1.elasticbeanstalk.com/stats
+        return this.http.post('http://summarizeme.nrfkys4df7.us-east-1.elasticbeanstalk.com/summary', this.textToSum)
             .map(res => res.json());
     }
 }

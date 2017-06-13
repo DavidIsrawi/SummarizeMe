@@ -1,0 +1,225 @@
+/* Table of Contents
+______________________________________________________________
+- General Content
+- Typography
+- Header and Navigation
+- Images and Media
+- Footer
+- Media Queries
+______________________________________________________________ */
+
+/* General Content
+______________________________________________________________ */
+.main{
+    padding-top: 3%;
+}
+
+.row {
+    padding: 2% 0;
+}
+
+.green {
+    background-color: rgb(51, 119, 140);
+}
+
+.back {
+    background-color: rgb(52, 134, 170);
+    height: 100vh;
+    min-width: 100%;
+    background-size: cover;
+}
+
+/* Typography
+______________________________________________________________ */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 3em;
+    margin: 0.67em;
+}
+
+h2.bio {
+    color: white;
+}
+
+p.bio {
+    color: white;
+    font-size: 1.4em;
+}
+
+a.bio {
+    color: white;
+    font-size: 1.4em;
+}
+
+.description {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    color: black;
+}
+
+a.name {
+    height: 50vh;
+    font-family: 'Lato', sans-serif;
+}
+
+p.subtitle {
+    font-size: 1.8em;
+    color: white;
+}
+
+/* Header and Navigation
+______________________________________________________________ */
+header.main_nav {
+    padding: 1% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    margin: 5% auto;
+    text-align: center;
+}
+
+.logo a{
+    font-size: 3.5em;
+    color: white;
+    text-decoration: none;
+    border: 3px solid white;
+    text-transform: uppercase;
+    padding: 2px 10px 0px 10px;
+    margin: 0;
+}
+
+.logo a:hover {
+    background-color: white;
+    color: rgb(52, 125, 177) !important;
+    color: #7accc8;
+}
+
+/* Images and Media
+______________________________________________________________ */
+img {
+    max-width: 100%;
+}
+
+img.avatar {
+    border-radius: 400px;
+    border: 5px solid white;
+}
+
+img.volunteer {
+    height: 120px;
+    width: 150px;
+}
+
+img.project {
+    max-width: 170px;
+    max-height: 170px;
+}
+
+img.shared {
+    height: 15.7em;
+}
+
+img:hover {
+    opacity: 0.8;
+}
+
+.repo {
+    color: black;
+}
+
+/* Footer
+______________________________________________________________ */
+ul.social {
+    display: block;
+    margin: 5% 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+ul.social li {
+    font-size: 3em;
+    display: inline;
+    padding: 0 2%;
+}
+
+ul.social li a {
+    color: #666;
+}
+
+ul.social li.facebook a:hover {
+    color: rgb(59,89,152);
+}
+
+ul.social li.twitter a:hover {
+    color: rgb(0,172,237);
+}
+
+ul.social li.instagram a:hover {
+    color: rgb(81,127,237);
+}
+
+ul.social li.youtube a:hover {
+    color: rgb(187,0,0);
+}
+
+ul.social li.flickr a:hover {
+    color: rgb(255,0,132);
+}
+
+ul.social li.linkedin a:hover {
+    color: rgb(0,123,182);
+}
+
+ul.social li.github a:hover {
+    color: rgb(32, 32, 32);
+}
+
+ul.social li.email a:hover {
+    color: rgb(52, 145, 112);
+}
+
+p.copyright {
+    text-align: center;
+    color: #666;
+    font-size: 1em;
+}
+
+/* Media Queries
+______________________________________________________________ */
+/* Larger than mobile */
+@media (max-width: 479px) {
+    .logo a {
+        font-size: 2em;
+    }
+    .main {
+        padding-top: 15%;
+    }
+    .portfolio img{
+        margin-bottom: 10%;
+    }
+    img.avatar {
+        margin-top: 15%;
+    }
+    h2.bio {
+        font-size: 2.5em;
+    }
+    p.bio {
+        font-size: 1.25em;
+        color: #fbfbfb;
+    }
+    ul.social li a {
+        font-size: .75em;
+    }
+}
