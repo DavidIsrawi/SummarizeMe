@@ -91,14 +91,14 @@ def summarize(text):
             print(sentence)
             result["text"] +=  " " + sentence
 
-    # Difference = length of summary / length of original text
-    difference = "{:.1%}".format(len(result["text"])/len(text))
+    # Difference = 1 - length of summary / length of original text
+    difference = "{:.1%}".format(1 - len(result["text"])/len(text))
 
     # Open the mini db
     db = json.load(open('db.json'))
 
     # Find the contrast between the average and current reduction
-    fDiff = len(result["text"])/len(text)
+    fDiff = 1 - len(result["text"])/len(text)
     print("{} current and {} avg".format(fDiff, db["avgReduction"]))
     if(fDiff > db["avgReduction"]):
         result["stats"]["avg_contrast"] = "above"
