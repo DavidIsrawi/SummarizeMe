@@ -1,6 +1,8 @@
 # Summarize Me
 Program summarizes articles into a few sentences. Inspired by the auto TL;DR bot used for many subreddits
 
+Check it out at http://davidisrawi.me/SummarizeMe/
+
 ## How does it work
 **Using NLTK**
 - Remove words with no value from the article (e.g. 'a', 'to', 'am')
@@ -22,7 +24,13 @@ Program summarizes articles into a few sentences. Inspired by the auto TL;DR bot
 
 [nltk](http://www.nltk.org/) - Natural Language Toolkit
 
-## To test
+## Deployment and Hosting info
+
+RESTful API hosted in AWS Elastic Beanstalk. Click on [URL](http://summarizeme.nrfkys4df7.us-east-1.elasticbeanstalk.com) to check features
+
+Angular application hosted in GitHub Pages using [angular-cli-ghpages](https://github.com/angular-buch/angular-cli-ghpages)
+
+## To test (not needed anymore)
 
 Using npm and json-server:
 ```
