@@ -12,10 +12,12 @@ export class HomeComponent  {
     submitted: boolean;
     summary: Summary;
     textToSum: string;
+    text: string;
 
     constructor(private summaryService: SummaryService) {
         this.submitted = false;
         this.textToSum = "";
+        this.text = "";
 
         this.summary = {
             text: "",
@@ -44,8 +46,8 @@ export class HomeComponent  {
         // })
     }
 
-    submit(text : string) {
-        this.textToSum = text;
+    submit() {
+        this.textToSum = this.text;
 
         // Make object to send to rest api
         this.summaryService.textToSum = {
