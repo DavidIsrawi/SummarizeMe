@@ -11,6 +11,13 @@
     </div>
 </header>
 
+<div class="container" *ngIf="bigEnough">
+    <div class="twelve columns">
+        <h2 style="color:red; margin-top:5%;">Your text must be at least 250 characters long</h2>
+    </div>
+
+</div>
+
 <!-- This is temporary, find a way to modularize it to submmary.component -->
 <div class="container" *ngIf="submitted">
     <div class="twelve columns">

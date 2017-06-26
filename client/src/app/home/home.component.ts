@@ -13,11 +13,13 @@ export class HomeComponent  {
     summary: Summary;
     textToSum: string;
     text: string;
+    bigEnough: boolean;
 
     constructor(private summaryService: SummaryService) {
         this.submitted = false;
         this.textToSum = "";
         this.text = "";
+        this.bigEnough = false;
 
         this.summary = {
             text: "",
@@ -48,30 +50,39 @@ export class HomeComponent  {
 
     submit() {
         this.textToSum = this.text;
+        this.bigEnough = false;
 
-        // Make object to send to rest api
-        this.summaryService.textToSum = {
-            text: this.textToSum
+        if(this.text.length <= 250) {
+            this.bigEnough = true;
+
         }
+        else {
 
-        this.summaryService.getSummary().subscribe(summary => {
-            //console.log(summary["result"]);
-
-            this.summary = {
-                text: summary["result"]["text"],
-                reduced_by: summary["result"]["stats"]["reduced_by"],
-                avg_contrast: summary["result"]["stats"]["avg_contrast"],
-                avg_current: summary["result"]["stats"]["avg_current"],
-                rel_words: summary["result"]["stats"]["relevant_words"]
-            };
-
-            console.log("Got it!");
-            console.log(this.summary);
-
-            if(!this.submitted){
-                this.submitted = true;
+            // Make object to send to rest api
+            this.summaryService.textToSum = {
+                text: this.textToSum
             }
-        });
+
+            this.summaryService.getSummary().subscribe(summary => {
+                //console.log(summary["result"]);
+
+                this.summary = {
+                    text: summary["result"]["text"],
+                    reduced_by: summary["result"]["stats"]["reduced_by"],
+                    avg_contrast: summary["result"]["stats"]["avg_contrast"],
+                    avg_current: summary["result"]["stats"]["avg_current"],
+                    rel_words: summary["result"]["stats"]["relevant_words"]
+                };
+
+                console.log("Got it!");
+                console.log(this.summary);
+
+                if(!this.submitted){
+                    this.submitted = true;
+                }
+            });
+
+        }
     }
 }
 
