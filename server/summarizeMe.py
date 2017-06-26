@@ -86,7 +86,7 @@ def summarize(text):
     for sentence in sentences:
         # If a sentence's value more than twice the average, add it to the summary
         # ENHANCEMENT: make the threshold a variable and let the user determine the size of the summary
-        if sentenceVal[sentence[:12]] > (2 * average):
+        if sentence[:12] in sentenceVal and sentenceVal[sentence[:12]] > (1.5 * average):
             summarySize += 1
             print(sentence)
             result["text"] +=  " " + sentence
