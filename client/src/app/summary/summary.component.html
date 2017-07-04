@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="twelve columns">
         <h1>Summary:</h1>
         <p>asdkjnaslfkafdfsdfs</p>
@@ -13,6 +13,22 @@
             <li>Trump</li>
             <li>Fake</li>
             <li>News</li>
+        </ul>
+    </div>
+</div> -->
+
+<div class="container" *ngIf="submitted">
+    <div class="twelve columns">
+        <h1>Summary:</h1>
+        <p class="description">{{summary.text}}</p>
+    </div>
+    <hr>
+    <div class="twelve columns">
+        <h1>Statistics:</h1>
+        <p class="description">Your text was reduced by <strong>{{summary.reduced_by}}</strong>, this is <strong>{{summary.avg_contrast}}</strong> our current average of <strong>{{summary.avg_current}}</strong>.</p>
+        <p class="description">The most relevant words were:</p>
+        <ul>
+            <li class="description" *ngFor="let word of summary.rel_words">{{word.word}} - {{word.relevancy}}</li>
         </ul>
     </div>
 </div>

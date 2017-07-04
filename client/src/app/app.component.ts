@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   template: `
   <home></home>
   <hr>
+  <speeches></speeches>
+  <hr>
   <how></how>
   <hr>
   `,
