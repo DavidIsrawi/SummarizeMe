@@ -1,3 +1,4 @@
+<!-- Header -->
 <header class="main_nav back">
     <div class="container">
         <div class="twelve columns">
@@ -11,14 +12,14 @@
     </div>
 </header>
 
-<div class="container" *ngIf="bigEnough">
+<div class="container" *ngIf="!bigEnough">
     <div class="twelve columns">
         <h2 style="color:red; margin-top:5%;">Your text must be at least 250 characters long</h2>
     </div>
 
 </div>
 
-<!-- This is temporary, find a way to modularize it to summary.component -->
+<!-- Here is where the summary is -->
 <div class="container" *ngIf="submitted">
     <div class="twelve columns">
         <h1>Summary:</h1>
@@ -32,5 +33,17 @@
         <ul>
             <li class="description" *ngFor="let word of summary.rel_words">{{word.word}} - {{word.relevancy}}</li>
         </ul>
+    </div>
+</div>
+
+<hr>
+
+<!-- Here is where the sample speeches are -->
+<div class="container">
+    <div class="twelve columns">
+        <h1>Try it out with your favorite speeches:</h1>
+        <button class="ten columns" style="margin-right:1rem;" *ngFor="let speech of speeches" (click)="runSample(speech.speech)">
+            {{speech.title}}
+        </button>
     </div>
 </div>

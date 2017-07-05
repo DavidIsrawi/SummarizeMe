@@ -1,25 +1,27 @@
 import { Component } from '@angular/core';
+import { Speeches } from './speeches';
 import { SummaryService } from '../summary.service';
 
 @Component({
     moduleId: module.id,
     selector: 'home',
     templateUrl: 'home.component.html',
-    providers: [SummaryService]
+    providers: [SummaryService, Speeches]
 })
 
 export class HomeComponent  {
     submitted: boolean;
-    summary: Summary;
     textToSum: string;
     text: string;
     bigEnough: boolean;
+    speeches: Speech[];
+    summary: Summary;
 
-    constructor(private summaryService: SummaryService) {
+    constructor(private summaryService: SummaryService, private speechSamples: Speeches) {
         this.submitted = false;
-        this.textToSum = "";
         this.text = "";
-        this.bigEnough = false;
+        this.bigEnough = true;
+        this.speeches = speechSamples.speeches;
 
         this.summary = {
             text: "",
@@ -41,26 +43,18 @@ export class HomeComponent  {
                 }
             ]
         };
-
-        // this.summaryService.getSummary().subscribe(summary => {
-        //     console.log(summary);
-        //     this.summary = summary;
-        // })
     }
 
     submit() {
-        this.textToSum = this.text;
-        this.bigEnough = false;
-
+        this.submitted = false;
+        this.bigEnough = true;
         if(this.text.length <= 250) {
-            this.bigEnough = true;
-
+            console.warn("Text is too short! Make sure it's 250 characters or more");
+            this.bigEnough = false;
         }
         else {
-
-            // Make object to send to rest api
             this.summaryService.textToSum = {
-                text: this.textToSum
+                text: this.text
             }
 
             this.summaryService.getSummary().subscribe(summary => {
@@ -79,11 +73,21 @@ export class HomeComponent  {
 
                 if(!this.submitted){
                     this.submitted = true;
+                    console.log(this.submitted);
                 }
             });
-
         }
     }
+
+    runSample(speech) {
+        this.text = speech;
+        this.submit();
+    }
+}
+
+interface Speech {
+    speech: string;
+    title: string;
 }
 
 interface Summary {

@@ -6,23 +6,23 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HowComponent } from './how/how.component';
 import { HomeComponent } from './home/home.component';
-import { SummaryComponent } from './summary/summary.component';
-import { SpeechesComponent } from './speeches/speeches.component';
+
+import { SummaryService } from './summary.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HowComponent,
     HomeComponent,
-    SummaryComponent,
-    SpeechesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
