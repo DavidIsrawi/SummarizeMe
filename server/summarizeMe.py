@@ -20,9 +20,8 @@ def summarize(text):
     summarySize = 0; # Store size of summary to retrieve stats
 
     # RegexpTokenizer used to avoid punctuation signs
-    tokenizer = RegexpTokenizer(r"\w+")
+    tokenizer = RegexpTokenizer(r"[a-zA-Z_']+")
     words = tokenizer.tokenize(news)
-    sentences = sent_tokenize(news)
 
     # Retrieve set to remove stopwords from analysis
     stopWords = set(stopwords.words("english"))
