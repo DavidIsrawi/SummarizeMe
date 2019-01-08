@@ -1,7 +1,7 @@
 # Summarize Me
 Program summarizes articles into a few sentences. Inspired by the auto TL;DR bot used for many subreddits
 
-Check it out at http://davidisrawi.me/SummarizeMe/
+Check it out at http://summarizeme.surge.sh/
 
 ## How does it work
 **Using NLTK**
@@ -68,3 +68,5 @@ Check Traversy Media's video: [Angular 2 in 60 Minutes](https://www.youtube.com/
 Angular's [QuickStart](https://github.com/angular/quickstart)
 
 TL;DR bot made by [SMMRY](http://smmry.com/)
+
+If interested in understanding how it works, feel free to [read my article]([Article](https://dev.to/davidisrawi/build-a-quick-summarizer-with-python-and-nltk)) at dev.to
