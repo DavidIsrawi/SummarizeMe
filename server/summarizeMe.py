@@ -3,6 +3,7 @@ from nltk.stem import PorterStemmer
 from nltk.stem.snowball import SnowballStemmer
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.tokenize import RegexpTokenizer
+import nltk
 import json
 import operator
 
@@ -22,6 +23,7 @@ def summarize(text):
     # RegexpTokenizer used to avoid punctuation signs
     tokenizer = RegexpTokenizer(r"[a-zA-Z_']+")
     words = tokenizer.tokenize(news)
+    sentences = sent_tokenize(news)
 
     # Retrieve set to remove stopwords from analysis
     stopWords = set(stopwords.words("english"))
