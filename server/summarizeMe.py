@@ -51,7 +51,7 @@ def summarize(text):
 
     counter = 0
     for w in freq:
-        print(w)
+        # print(w)
         word = dict()
         word["word"] = w[0]
         word["relevancy"] = "{:.2%}".format(w[1]/result["stats"]["word_length"])
@@ -83,13 +83,13 @@ def summarize(text):
     # Average value of a sentence from original text
     average = int(sumValues/ len(sentenceVal))
 
-    print("\nSUMMARY ----------------------------------------------\n")
+    # print("\nSUMMARY ----------------------------------------------\n")
     for sentence in sentences:
         # If a sentence's value more than twice the average, add it to the summary
         # ENHANCEMENT: make the threshold a variable and let the user determine the size of the summary
         if sentence[:12] in sentenceVal and sentenceVal[sentence[:12]] > (1.5 * average):
             summarySize += 1
-            print(sentence)
+            # print(sentence)
             result["text"] +=  " " + sentence
 
     # Difference = 1 - length of summary / length of original text
@@ -100,7 +100,7 @@ def summarize(text):
 
     # Find the contrast between the average and current reduction
     fDiff = 1 - len(result["text"])/len(text)
-    print("{} current and {} avg".format(fDiff, db["avgReduction"]))
+    # print("{} current and {} avg".format(fDiff, db["avgReduction"]))
     if(fDiff > db["avgReduction"]):
         result["stats"]["avg_contrast"] = "above"
     elif(fDiff < db["avgReduction"]):
@@ -126,8 +126,8 @@ def summarize(text):
     result["stats"]["reduced_by"] = difference
 
     # DEBUGGING
-    print("\nArticle reduced by ", difference)
-    print("Average reduction is currently {}".format(db["avgReduction"]))
-    print("Total summaries is currently {}".format(db["totalSummaries"]))
+    # print("\nArticle reduced by ", difference)
+    # print("Average reduction is currently {}".format(db["avgReduction"]))
+    # print("Total summaries is currently {}".format(db["totalSummaries"]))
 
     return result
