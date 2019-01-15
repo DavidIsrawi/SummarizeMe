@@ -12,7 +12,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build and Deploy
 
-Run `ng build --prod` to build the project. The build artifacts will be stored in the `dist/` directory. Deploy the `dist\` folder by calling `surge`
+Run `npm run deploy`. The project will build under the `dist/` folder and deployed using `surge`. Follow the prompts for deployment.
 
 ## Running unit tests
 
